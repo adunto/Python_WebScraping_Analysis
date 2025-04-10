@@ -6,5 +6,5 @@ img.html
 *.jpg
 .env
 
-.csv
-.json
+*.csv
+*.json
