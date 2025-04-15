@@ -4,6 +4,10 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
+import numpy as np
+
+plt.rc('font', family='NanumGothic')
 
 # 샘플 데이터 생성
 data = {'선거구': ['A', 'B', 'C', 'A', 'B', 'C', 'A', 'B', 'C'],
@@ -12,6 +16,12 @@ df = pd.DataFrame(data)
 
 # Streamlit 앱
 st.title("📊 Pandas DataFrame & Seaborn Plot")
+
+df_random = pd.DataFrame(
+        np.random.randn(10, 20),
+        columns=('col %d' % i for i in range(20)),
+)
+st.dataframe(df_random)
 
 # DataFrame 출력
 st.subheader("📋 데이터 테이블")
